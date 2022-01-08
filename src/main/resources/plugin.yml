@@ -1,0 +1,5 @@
+name: SaferTagging
+version: '${project.version}'
+main: net.vanillaplus.safertagging.Main
+api-version: 1.17
+depend: [CombatLogX , BetterTeams]
