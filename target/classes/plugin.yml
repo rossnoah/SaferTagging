@@ -1,5 +1,5 @@
 name: SaferTagging
 version: '1.0-SNAPSHOT'
-main: com.notablenoah.safertagging.Main
+main: net.vanillaplus.safertagging.Main
 api-version: 1.17
 depend: [CombatLogX , BetterTeams]
