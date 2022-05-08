@@ -16,7 +16,7 @@ import java.util.UUID;
 public final class Main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
-        Bukkit.getPluginManager().registerEvents(this, this);
+        Bukkit.getPluginManager().registerEvents(this, (Plugin)this);
     }
 
     @EventHandler
@@ -24,8 +24,8 @@ public final class Main extends JavaPlugin implements Listener {
         Player tagged = e.getPlayer();
         if (e.getEnemy() instanceof Player) {
             Player enemy = (Player)e.getEnemy();
-            if (Team.getTeam(tagged.getUniqueId()) != null && Team.getTeam(enemy.getUniqueId()) != null &&
-                    Team.getTeam(tagged.getUniqueId()).equals(Team.getTeam(enemy.getUniqueId())))
+            if (Team.getTeam((OfflinePlayer)tagged) != null && Team.getTeam((OfflinePlayer)enemy) != null &&
+                    Team.getTeam((OfflinePlayer)tagged).equals(Team.getTeam((OfflinePlayer)enemy)))
                 e.setCancelled(true);
         }
     }
